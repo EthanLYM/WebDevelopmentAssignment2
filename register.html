@@ -1,0 +1,156 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="author" content="Ethan Lau Yang Ming">
+        <meta name="title" content="TapirFind">
+        <meta name="description" content="Web Development Assignment 2">
+        <title>Register | TapirFind</title>
+        <link rel="stylesheet" href="css/style.css">
+        <script src="js/jquery.min.js"></script>
+        <script src="js/script.js" defer></script>
+    </head>
+
+    <body>
+        <!-- Shared navigation -->
+        <header class="site-header">
+            <div class="bar">
+                <a class="brand" href="index.html">
+                    <span class="logo">
+                        <img class="logo-base" src="images/logo.png" alt="" width="240" height="240">
+                        <img class="logo-mark" src="images/restaurantTapir.png" alt="" width="192" height="192">
+                    </span>
+                    <span class="brand-name">TapirFind</span>
+                </a>
+                <button class="nav-toggle" type="button" id="menuBtn" aria-label="Menu" aria-expanded="false" aria-controls="menu">
+                    <span class="burger"></span>
+                </button>
+                <nav aria-label="Main">
+                    <ul id="menu">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="restaurants.html">Restaurants</a></li>
+                        <li><a href="recommend.html">Recommend</a></li>
+                        <li><a href="register.html" class="active" aria-current="page">Register</a></li>
+                        <li><a href="reservation.html">Reserve</a></li>
+                        <li><a href="bill.html">Bill estimate</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+
+        <main>
+            <!-- Registration form -->
+            <section class="wrap narrow">
+                <h1>Create an account</h1>
+                <form id="regForm" method="post" action="http://mercury.swin.edu.au/it000000/cos10005/regtest.php" novalidate>
+                    <div class="field">
+                        <label for="username">Username</label>
+                        <input id="username" name="username" type="text">
+                    </div>
+
+                    <div class="field">
+                        <label for="email">Email address</label>
+                        <input id="email" name="email" type="email">
+                    </div>
+
+                    <div class="field">
+                        <label for="phone">Phone number</label>
+                        <input id="phone" name="phone" type="tel" placeholder="e.g. +60123456789">
+                    </div>
+
+                    <div class="field">
+                        <label for="password">Password</label>
+                        <input id="password" name="password" type="password">
+                    </div>
+
+                    <div class="field">
+                        <label for="confirmPwd">Confirm password</label>
+                        <input id="confirmPwd" name="confirmPwd" type="password">
+                    </div>
+
+                    <fieldset>
+                        <legend>Gender</legend>
+                        <label><input type="radio" id="genF" name="gender" value="Female"> Female</label>
+                        <label><input type="radio" id="genM" name="gender" value="Male"> Male</label>
+                        <label><input type="radio" id="genO" name="gender" value="Other"> Other</label>
+                        <label><input type="radio" id="genN" name="gender" value="Prefer not to say"> Prefer not to say</label>
+                    </fieldset>
+
+                    <fieldset>
+                        <legend>Dietary preferences</legend>
+                        <label><input type="checkbox" id="dietNone" name="diet" value="None"> No restrictions</label>
+                        <label><input type="checkbox" id="dietHalal" name="diet" value="Halal"> Halal</label>
+                        <label><input type="checkbox" id="dietVegetarian" name="diet" value="Vegetarian">
+                            Vegetarian</label>
+                        <label><input type="checkbox" id="dietVegan" name="diet" value="Vegan"> Vegan</label>
+                    </fieldset>
+
+                    <div class="field">
+                        <label for="country">Country</label><select id="country" name="country">
+                            <option value="">Select one</option>
+                            <option>Malaysia</option>
+                            <option>Singapore</option>
+                            <option>Indonesia</option>
+                            <option>Thailand</option>
+                            <option>Australia</option>
+                            <option>China</option>
+                            <option>India</option>
+                            <option>United Kingdom</option>
+                            <option>United States</option>
+                            <option>Other</option>
+                        </select>
+                    </div>
+
+                    <button class="btn" type="submit">Create account</button>
+                </form>
+            </section>
+        </main>
+
+        <!-- Shared footer -->
+        <footer class="site-footer">
+            <div class="footer-inner">
+                <div class="footer-brand">
+                    <a class="brand" href="index.html">
+                        <span class="logo">
+                            <img class="logo-base" src="images/logo.png" alt="" width="240" height="240">
+                            <img class="logo-mark" src="images/restaurantTapir.png" alt="" width="192" height="192">
+                        </span>
+                        <span class="brand-name">TapirFind</span>
+                    </a>
+                    <p>Discover restaurants across Malaysia.</p>
+                </div>
+                <nav class="footer-col" aria-labelledby="footer-explore">
+                    <h2 id="footer-explore">Explore</h2>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About TapirFind</a></li>
+                        <li><a href="restaurants.html">Restaurants</a></li>
+                        <li><a href="recommend.html">Get a recommendation</a></li>
+                    </ul>
+                </nav>
+                <nav class="footer-col" aria-labelledby="footer-plan">
+                    <h2 id="footer-plan">Plan your visit</h2>
+                    <ul>
+                        <li><a href="reservation.html">Reserve a table</a></li>
+                        <li><a href="bill.html">Bill estimate</a></li>
+                        <li><a href="register.html">Create an account</a></li>
+                    </ul>
+                </nav>
+                <nav class="footer-col" aria-labelledby="footer-popular">
+                    <h2 id="footer-popular">Popular restaurants</h2>
+                    <ul>
+                        <li><a href="restaurants.html#cikgu-mi">Nasi Berlauk Cikgu Mi</a></li>
+                        <li><a href="restaurants.html#desi-swaad">Desi Swaad Kitchen</a></li>
+                        <li><a href="restaurants.html#zen-house">Zen House Japanese Vegetarian Restaurant</a></li>
+                    </ul>
+                </nav>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 TapirFind.</p>
+                <a href="#">Back to top</a>
+            </div>
+        </footer>
+    </body>
+</html>

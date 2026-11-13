@@ -1,0 +1,146 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="author" content="Ethan Lau Yang Ming">
+        <meta name="title" content="TapirFind">
+        <meta name="description" content="Web Development Assignment 2">
+        <title>Recommendations | TapirFind</title>
+        <link rel="stylesheet" href="css/style.css">
+        <script src="js/jquery.min.js"></script>
+        <script src="js/script.js" defer></script>
+    </head>
+
+    <body>
+        <!-- Shared navigation -->
+        <header class="site-header">
+            <div class="bar">
+                <a class="brand" href="index.html">
+                    <span class="logo">
+                        <img class="logo-base" src="images/logo.png" alt="" width="240" height="240">
+                        <img class="logo-mark" src="images/restaurantTapir.png" alt="" width="192" height="192">
+                    </span>
+                    <span class="brand-name">TapirFind</span>
+                </a>
+                <button class="nav-toggle" type="button" id="menuBtn" aria-label="Menu" aria-expanded="false" aria-controls="menu">
+                    <span class="burger"></span>
+                </button>
+                <nav aria-label="Main">
+                    <ul id="menu">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="restaurants.html">Restaurants</a></li>
+                        <li><a href="recommend.html" class="active" aria-current="page">Recommend</a></li>
+                        <li><a href="register.html">Register</a></li>
+                        <li><a href="reservation.html">Reserve</a></li>
+                        <li><a href="bill.html">Bill estimate</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+
+        <main>
+            <!-- Recommendation form -->
+            <section class="wrap narrow">
+                <h1>Get a recommendation</h1>
+                <p class="lead">Select your preferences and we will match you with the most suitable restaurants.</p>
+                <form id="recForm" novalidate>
+                    <div class="field">
+                        <label for="diet">Dietary &amp; Lifestyle</label><select id="diet" name="diet">
+                            <option>None</option>
+                            <option>Vegetarian</option>
+                            <option>Vegan</option>
+                        </select>
+                    </div>
+
+                    <div class="field">
+                        <label for="category">Halal &amp; Religious Status</label><select id="category" name="category">
+                            <option>Any</option>
+                            <option>Muslim-Friendly</option>
+                            <option>Halal</option>
+                        </select>
+                    </div>
+
+                    <div class="field">
+                        <label for="food">Cuisine</label><select id="food" name="food">
+                            <option>Any</option>
+                            <option>Asian</option>
+                            <option>Malay</option>
+                            <option>Chinese</option>
+                            <option>Indian</option>
+                            <option>Japanese</option>
+                            <option>Thai</option>
+                            <option>Western</option>
+                        </select>
+                    </div>
+
+                    <div class="field">
+                        <label for="budget">Budget per person</label><select id="budget" name="budget">
+                            <option value="low">Under RM30</option>
+                            <option value="mid" selected>RM30 to RM60</option>
+                            <option value="high">Above RM60</option>
+                        </select>
+                    </div>
+
+                    <div class="field">
+                        <label for="purpose">Dining purpose</label><select id="purpose" name="purpose">
+                            <option>Family</option>
+                            <option>Couples</option>
+                            <option>Professionals</option>
+                            <option>Tourists</option>
+                        </select>
+                    </div>
+
+                    <button class="btn" type="submit">Show matches</button>
+                </form>
+                <div id="results"></div>
+            </section>
+        </main>
+
+        <!-- Shared footer -->
+        <footer class="site-footer">
+            <div class="footer-inner">
+                <div class="footer-brand">
+                    <a class="brand" href="index.html">
+                        <span class="logo">
+                            <img class="logo-base" src="images/logo.png" alt="" width="240" height="240">
+                            <img class="logo-mark" src="images/restaurantTapir.png" alt="" width="192" height="192">
+                        </span>
+                        <span class="brand-name">TapirFind</span>
+                    </a>
+                    <p>Discover restaurants across Malaysia.</p>
+                </div>
+                <nav class="footer-col" aria-labelledby="footer-explore">
+                    <h2 id="footer-explore">Explore</h2>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About TapirFind</a></li>
+                        <li><a href="restaurants.html">Restaurants</a></li>
+                        <li><a href="recommend.html">Get a recommendation</a></li>
+                    </ul>
+                </nav>
+                <nav class="footer-col" aria-labelledby="footer-plan">
+                    <h2 id="footer-plan">Plan your visit</h2>
+                    <ul>
+                        <li><a href="reservation.html">Reserve a table</a></li>
+                        <li><a href="bill.html">Bill estimate</a></li>
+                        <li><a href="register.html">Create an account</a></li>
+                    </ul>
+                </nav>
+                <nav class="footer-col" aria-labelledby="footer-popular">
+                    <h2 id="footer-popular">Popular restaurants</h2>
+                    <ul>
+                        <li><a href="restaurants.html#cikgu-mi">Nasi Berlauk Cikgu Mi</a></li>
+                        <li><a href="restaurants.html#desi-swaad">Desi Swaad Kitchen</a></li>
+                        <li><a href="restaurants.html#zen-house">Zen House Japanese Vegetarian Restaurant</a></li>
+                    </ul>
+                </nav>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 TapirFind.</p>
+                <a href="#">Back to top</a>
+            </div>
+        </footer>
+    </body>
+</html>

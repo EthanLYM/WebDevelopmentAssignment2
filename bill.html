@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="author" content="Ethan Lau Yang Ming">
+        <meta name="title" content="TapirFind">
+        <meta name="description" content="Web Development Assignment 2">
+        <title>Bill estimate | TapirFind</title>
+        <link rel="stylesheet" href="css/style.css">
+        <script src="js/jquery.min.js"></script>
+        <script src="js/script.js" defer></script>
+    </head>
+
+    <body>
+        <!-- Shared navigation -->
+        <header class="site-header">
+            <div class="bar">
+                <a class="brand" href="index.html">
+                    <span class="logo">
+                        <img class="logo-base" src="images/logo.png" alt="" width="240" height="240">
+                        <img class="logo-mark" src="images/restaurantTapir.png" alt="" width="192" height="192">
+                    </span>
+                    <span class="brand-name">TapirFind</span>
+                </a>
+                <button class="nav-toggle" type="button" id="menuBtn" aria-label="Menu" aria-expanded="false" aria-controls="menu">
+                    <span class="burger"></span>
+                </button>
+                <nav aria-label="Main">
+                    <ul id="menu">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="restaurants.html">Restaurants</a></li>
+                        <li><a href="recommend.html">Recommend</a></li>
+                        <li><a href="register.html">Register</a></li>
+                        <li><a href="reservation.html">Reserve</a></li>
+                        <li><a href="bill.html" class="active" aria-current="page">Bill estimate</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+
+        <main>
+            <!-- Estimated Bill -->
+            <section class="wrap narrow">
+                <h1>Estimated bill</h1>
+                <p class="lead">Work out roughly what your meal will cost before you book.</p>
+                <form id="billForm" novalidate>
+                    <div class="field">
+                        <label for="billRestaurant">Restaurant</label><select id="billRestaurant" name="restaurant">
+                            <option value="cikgu-mi">Nasi Berlauk Cikgu Mi</option>
+                            <option value="desi-swaad">Desi Swaad Kitchen</option>
+                            <option value="zen-house">Zen House Japanese Vegetarian Restaurant</option>
+                            <option value="bear-hug">The Bear Hug Restaurant &amp; Cafe</option>
+                            <option value="kar-hiong">Restoran Kar Hiong</option>
+                            <option value="siam-thaiger">Siam Thaiger Thai Cafe</option>
+                        </select>
+                    </div>
+                    <div class="field">
+                        <label for="billPeople">Number of people</label>
+                        <input id="billPeople" name="billPeople" type="number" min="1" max="50" value="2">
+                    </div>
+                    <fieldset>
+                        <legend>Dishes (optional)</legend>
+                        <div id="dishList"></div>
+                        <p class="meta">
+                            Leave every quantity at 0 to estimate from the restaurant's estimated price range.
+                        </p>
+                    </fieldset>
+                </form>
+
+                <div id="billOut" class="panel"></div>
+                <p><a class="btn" id="billReserve" href="reservation.html">Reserve a table</a></p>
+            </section>
+        </main>
+
+        <!-- Shared footer -->
+        <footer class="site-footer">
+            <div class="footer-inner">
+                <div class="footer-brand">
+                    <a class="brand" href="index.html">
+                        <span class="logo">
+                            <img class="logo-base" src="images/logo.png" alt="" width="240" height="240">
+                            <img class="logo-mark" src="images/restaurantTapir.png" alt="" width="192" height="192">
+                        </span>
+                        <span class="brand-name">TapirFind</span>
+                    </a>
+                    <p>Discover restaurants across Malaysia.</p>
+                </div>
+                <nav class="footer-col" aria-labelledby="footer-explore">
+                    <h2 id="footer-explore">Explore</h2>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About TapirFind</a></li>
+                        <li><a href="restaurants.html">Restaurants</a></li>
+                        <li><a href="recommend.html">Get a recommendation</a></li>
+                    </ul>
+                </nav>
+                <nav class="footer-col" aria-labelledby="footer-plan">
+                    <h2 id="footer-plan">Plan your visit</h2>
+                    <ul>
+                        <li><a href="reservation.html">Reserve a table</a></li>
+                        <li><a href="bill.html">Bill estimate</a></li>
+                        <li><a href="register.html">Create an account</a></li>
+                    </ul>
+                </nav>
+                <nav class="footer-col" aria-labelledby="footer-popular">
+                    <h2 id="footer-popular">Popular restaurants</h2>
+                    <ul>
+                        <li><a href="restaurants.html#cikgu-mi">Nasi Berlauk Cikgu Mi</a></li>
+                        <li><a href="restaurants.html#desi-swaad">Desi Swaad Kitchen</a></li>
+                        <li><a href="restaurants.html#zen-house">Zen House Japanese Vegetarian Restaurant</a></li>
+                    </ul>
+                </nav>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 TapirFind.</p>
+                <a href="#">Back to top</a>
+            </div>
+        </footer>
+    </body>
+</html>

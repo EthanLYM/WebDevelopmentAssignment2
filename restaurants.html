@@ -1,0 +1,320 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="author" content="Ethan Lau Yang Ming">
+        <meta name="title" content="TapirFind">
+        <meta name="description" content="Web Development Assignment 2">
+        <title>Restaurants | TapirFind</title>
+        <link rel="stylesheet" href="css/style.css">
+        <script src="js/jquery.min.js"></script>
+        <script src="js/script.js" defer></script>
+    </head>
+
+    <body>
+        <!-- Shared navigation -->
+        <header class="site-header">
+            <div class="bar">
+                <a class="brand" href="index.html">
+                    <span class="logo">
+                        <img class="logo-base" src="images/logo.png" alt="" width="240" height="240">
+                        <img class="logo-mark" src="images/restaurantTapir.png" alt="" width="192" height="192">
+                    </span>
+                    <span class="brand-name">TapirFind</span>
+                </a>
+                <button class="nav-toggle" type="button" id="menuBtn" aria-label="Menu" aria-expanded="false" aria-controls="menu">
+                    <span class="burger"></span>
+                </button>
+                <nav aria-label="Main">
+                    <ul id="menu">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="restaurants.html" class="active" aria-current="page">Restaurants</a></li>
+                        <li><a href="recommend.html">Recommend</a></li>
+                        <li><a href="register.html">Register</a></li>
+                        <li><a href="reservation.html">Reserve</a></li>
+                        <li><a href="bill.html">Bill estimate</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+
+        <main>
+            <!-- Restaurants list -->
+            <section class="wrap">
+                <h1>Restaurants</h1>
+                <br>
+                <div class="grid g3">
+                    <article class="card" id="cikgu-mi">
+                        <button type="button" class="img-btn" data-target="details-cikgu-mi" aria-haspopup="dialog" aria-label="View details of Nasi Berlauk Cikgu Mi">
+                            <img class="card-photo" src="images/cikguMi/cikguMiRestaurant.jpg" alt="Image of Nasi Berlauk Cikgu Mi Restaurant" width="600" height="400" loading="lazy">
+                            <img class="card-logo" src="images/cikguMi/cikguMiLogo.jpg" alt="Logo of Nasi Berlauk Cikgu Mi" width="126" height="44" loading="lazy">
+                        </button>
+                        <div class="card-body">
+                            <h2>Nasi Berlauk Cikgu Mi</h2>
+                            <p class="meta">About RM 17.00 per person (RM 13.00 – RM 21.00).</p>
+                            <p class="location">
+                                <strong>Location:</strong> NO 206, BLOK A, Glomac Business Centre, 10, Jalan SS 6/1, Ss
+                                6, 47301 Petaling Jaya, Selangor
+                            </p>
+                            <p class="location tags"><strong>Cuisine:</strong> Malaysian Cuisine</p>
+                            <p class="featured">
+                                <strong>Featured food:</strong> Nasi Ikan Tongkol, Nasi Keli Goreng, Nasi Ayam Goreng
+                            </p>
+                            <button type="button" class="btn btn-ghost view-btn" data-target="details-cikgu-mi">
+                                View details
+                            </button>
+                            <div class="details" id="details-cikgu-mi" hidden>
+                                <p>
+                                    Nasi Berlauk Cikgu Mi serves authentic Kelantan cuisine that embodies the flavors of
+                                    Kelantan, prepared with passion and guaranteed to be delicious, suitable for the
+                                    whole family to enjoy.
+                                </p>
+                                <h3>Signature dishes</h3>
+                                <ul class="dishes">
+                                    <li><span>Nasi Ikan Tongkol</span><span>RM 13.90</span></li>
+                                    <li><span>Nasi Keli Goreng</span><span>RM 13.90</span></li>
+                                    <li><span>Nasi Ayam Goreng</span><span>RM 12.40</span></li>
+                                </ul>
+                                <p><strong>Reservation deposit:</strong> RM 5.00</p>
+                                <a class="btn" href="reservation.html?r=cikgu-mi">Reserve at Nasi Berlauk Cikgu Mi</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="card" id="desi-swaad">
+                        <button type="button" class="img-btn" data-target="details-desi-swaad" aria-haspopup="dialog" aria-label="View details of Desi Swaad Kitchen">
+                            <img class="card-photo" src="images/desiSwaad/desiSwaadRestaurant.jpg" alt="Image of Desi Swaad Kitchen Restaurant" width="600" height="400" loading="lazy">
+                            <img class="card-logo" src="images/desiSwaad/desiSwaadLogo.jpg" alt="Logo of Desi Swaad Kitchen" width="44" height="44" loading="lazy">
+                        </button>
+                        <div class="card-body">
+                            <h2>Desi Swaad Kitchen</h2>
+                            <p class="meta">About RM 31.50 per person (RM 13.00 – RM 50.00).</p>
+                            <p class="location">
+                                <strong>Location:</strong> N15, Jalan USJ 9/5m, Subang Business Centre, 47620 Subang
+                                Jaya, Selangor
+                            </p>
+                            <p class="location tags"><strong>Cuisine:</strong> Northern Indian Cuisine</p>
+                            <p class="featured">
+                                <strong>Featured food:</strong> Paneer Pakora, Mutton Dum Biryani, Chicken Tandoori
+                                Biryani
+                            </p>
+                            <button type="button" class="btn btn-ghost view-btn" data-target="details-desi-swaad">
+                                View details
+                            </button>
+                            <div class="details" id="details-desi-swaad" hidden>
+                                <p>
+                                    Desi Swaad Kitchen serves authentic Northern Indian dishes that are as delicious as
+                                    they are reasonably priced, suitable for the whole family to enjoy.
+                                </p>
+                                <h3>Signature dishes</h3>
+                                <ul class="dishes">
+                                    <li><span>Paneer Pakora</span><span>RM 16.90</span></li>
+                                    <li><span>Mutton Dum Biryani</span><span>RM 26.90</span></li>
+                                    <li><span>Chicken Tandoori Biryani</span><span>RM 25.00</span></li>
+                                </ul>
+                                <p><strong>Reservation deposit:</strong> RM 10.00</p>
+                                <a class="btn" href="reservation.html?r=desi-swaad">Reserve at Desi Swaad Kitchen</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="card" id="zen-house">
+                        <button type="button" class="img-btn" data-target="details-zen-house" aria-haspopup="dialog" aria-label="View details of Zen House Japanese Vegetarian Restaurant">
+                            <img class="card-photo" src="images/zenHouse/zenHouseSVelocity.jpg" alt="Image of Zen House&#x27;s Sunway Velocity Restaurant" width="600" height="400" loading="lazy">
+                            <img class="card-logo" src="images/zenHouse/zenHouseLogo.png" alt="Logo of Zen House Japanese Vegetarian Restaurant" width="44" height="44" loading="lazy">
+                        </button>
+                        <div class="card-body">
+                            <h2>Zen House Japanese Vegetarian Restaurant</h2>
+                            <p class="meta">About RM 55.00 per person (RM 10.00 – RM 100.00).</p>
+                            <p class="location">
+                                <strong>Locations:</strong> LG2.99, Sunway Pyramid, Darul Ehsan, Level CP6, Blue Atrium,
+                                3, Jalan PJS 11/15, Bandar Sunway, 47500 Petaling Jaya, Selangor; B-03, Sunway Velocity,
+                                Lingkaran SV, Sunway Velocity, 55100 Kuala Lumpur, Malaysia
+                            </p>
+                            <p class="location tags"><strong>Cuisine:</strong> Japanese Vegetarian</p>
+                            <p class="featured">
+                                <strong>Featured food:</strong> Zen House Sashimi Moriawase, Omakase Moriawase, Unagi
+                                Kabayaki
+                            </p>
+                            <button type="button" class="btn btn-ghost view-btn" data-target="details-zen-house">
+                                View details
+                            </button>
+                            <div class="details" id="details-zen-house" hidden>
+                                <p>
+                                    Zen House serves the food of modern-day Japanese Vegetarian cuisine. By
+                                    experimenting with original flavour and modern techniques, they prove that
+                                    vegetarian food can be flavourful, creative and satisfying, with a menu that is as
+                                    varied as it is imaginative.
+                                </p>
+                                <h3>Signature dishes</h3>
+                                <ul class="dishes">
+                                    <li><span>Zen House Sashimi Moriawase</span><span>RM 58.90</span></li>
+                                    <li><span>Omakase Moriawase</span><span>RM 53.90</span></li>
+                                    <li><span>Unagi Kabayaki</span><span>RM 29.90</span></li>
+                                </ul>
+                                <p><strong>Reservation deposit:</strong> RM 15.00</p>
+                                <a class="btn" href="reservation.html?r=zen-house">Reserve at Zen House Japanese Vegetarian Restaurant</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="card" id="bear-hug">
+                        <button type="button" class="img-btn" data-target="details-bear-hug" aria-haspopup="dialog" aria-label="View details of The Bear Hug Restaurant &amp; Cafe">
+                            <img class="card-photo" src="images/bearHug/bearHugRestaurant.jpg" alt="Image of The Bear Hug Restaurant &amp; Cafe&#x27;s Restaurant" width="600" height="400" loading="lazy">
+                            <img class="card-logo" src="images/bearHug/bearHugLogo.jpg" alt="Logo of The Bear Hug Restaurant &amp; Cafe" width="44" height="44" loading="lazy">
+                        </button>
+                        <div class="card-body">
+                            <h2>The Bear Hug Restaurant &amp; Cafe</h2>
+                            <p class="meta">About RM 37.50 per person (RM 25.00 – RM 50.00).</p>
+                            <p class="location">
+                                <strong>Location:</strong> 10, Jalan USJ 11/3j, Usj 11, 47620 Subang Jaya, Selangor
+                            </p>
+                            <p class="location tags"><strong>Cuisine:</strong> Western</p>
+                            <p class="featured">
+                                <strong>Featured food:</strong> Aglio Olio Fried Chicken Chop, Grilled Salmon Fish,
+                                Salad Poke Bowl with Egg &amp; Salmon
+                            </p>
+                            <button type="button" class="btn btn-ghost view-btn" data-target="details-bear-hug">
+                                View details
+                            </button>
+                            <div class="details" id="details-bear-hug" hidden>
+                                <p>
+                                    The Bear Hug Restaurant &amp; Cafe serves a variety of western dishes in a very cozy
+                                    environment; a must go for enjoyers of western cuisine and salads. They also have
+                                    vegetarian options.
+                                </p>
+                                <h3>Signature dishes</h3>
+                                <ul class="dishes">
+                                    <li><span>Aglio Olio Fried Chicken Chop</span><span>RM 35.00</span></li>
+                                    <li><span>Grilled Salmon Fish</span><span>RM 46.00</span></li>
+                                    <li><span>Salad Poke Bowl with Egg &amp; Salmon</span><span>RM 35.00</span></li>
+                                </ul>
+                                <p><strong>Reservation deposit:</strong> RM 15.00</p>
+                                <a class="btn" href="reservation.html?r=bear-hug">Reserve at The Bear Hug Restaurant &amp; Cafe</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="card" id="kar-hiong">
+                        <button type="button" class="img-btn" data-target="details-kar-hiong" aria-haspopup="dialog" aria-label="View details of Restoran Kar Hiong">
+                            <img class="card-photo" src="images/karHiong/karHiongRestaurant.jpg" alt="Image of Restoran Kar Hiong&#x27;s Restaurant" width="600" height="400" loading="lazy">
+                            <img class="card-logo" src="images/karHiong/karHiongLogo.jpg" alt="Logo of Restoran Kar Hiong" width="44" height="44" loading="lazy">
+                        </button>
+                        <div class="card-body">
+                            <h2>Restoran Kar Hiong</h2>
+                            <p class="meta">About RM 32.50 per person (RM 25.00 – RM 40.00).</p>
+                            <p class="location">
+                                <strong>Location:</strong> 29, Jalan SS 18/1b, Ss 18, 47500 Subang Jaya, Selangor
+                            </p>
+                            <p class="location tags"><strong>Cuisine:</strong> Malaysian Chinese</p>
+                            <p class="featured">
+                                <strong>Featured food:</strong> Salted Egg Mantis Prawn, Asam Mixed Seafood, Mango
+                                Chicken
+                            </p>
+                            <button type="button" class="btn btn-ghost view-btn" data-target="details-kar-hiong">
+                                View details
+                            </button>
+                            <div class="details" id="details-kar-hiong" hidden>
+                                <p>
+                                    Restoran Kar Hiong (家香饭店) is a restaurant that has quickly become a favorite
+                                    among locals for its home-styled and flavorful dishes, offering a mix of classic
+                                    comfort food and bold flavors.
+                                </p>
+                                <h3>Signature dishes</h3>
+                                <ul class="dishes">
+                                    <li><span>Salted Egg Mantis Prawn</span><span>RM 28.00</span></li>
+                                    <li><span>Asam Mixed Seafood</span><span>RM 28.00</span></li>
+                                    <li><span>Mango Chicken</span><span>RM 23.00</span></li>
+                                </ul>
+                                <p><strong>Reservation deposit:</strong> RM 10.00</p>
+                                <a class="btn" href="reservation.html?r=kar-hiong">Reserve at Restoran Kar Hiong</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="card" id="siam-thaiger">
+                        <button type="button" class="img-btn" data-target="details-siam-thaiger" aria-haspopup="dialog" aria-label="View details of Siam Thaiger Thai Cafe">
+                            <img class="card-photo" src="images/siamThaiger/siamThaigerRestaurant.jpg" alt="Image of Siam Thaiger Thai Cafe Restaurant" width="600" height="400" loading="lazy">
+                            <img class="card-logo" src="images/siamThaiger/siamThaigerLogo.jpg" alt="Logo of Siam Thaiger Thai Cafe" width="44" height="44" loading="lazy">
+                        </button>
+                        <div class="card-body">
+                            <h2>Siam Thaiger Thai Cafe</h2>
+                            <p class="meta">About RM 60.00 per person (RM 20.00 – RM 100.00).</p>
+                            <p class="location">
+                                <strong>Location:</strong> 21G, Jalan SS 15/4c, Ss 15, 47500 Subang Jaya, Selangor
+                            </p>
+                            <p class="location tags"><strong>Cuisine:</strong> Thai</p>
+                            <p class="featured">
+                                <strong>Featured food:</strong> 3 Pork Combo, Flower Crab Salad, Spicy Salmon Salad
+                            </p>
+                            <button type="button" class="btn btn-ghost view-btn" data-target="details-siam-thaiger">
+                                View details
+                            </button>
+                            <div class="details" id="details-siam-thaiger" hidden>
+                                <p>
+                                    Siam Thaiger Thai Cafe serves Thai dishes in Subang Jaya, including a 3 Pork Combo,
+                                    Flower Crab Salad and Spicy Salmon Salad, and is suitable for family meals.
+                                </p>
+                                <h3>Signature dishes</h3>
+                                <ul class="dishes">
+                                    <li><span>3 Pork Combo</span><span>RM 58.50</span></li>
+                                    <li><span>Flower Crab Salad</span><span>RM 45.50</span></li>
+                                    <li><span>Spicy Salmon Salad</span><span>RM 45.50</span></li>
+                                </ul>
+                                <p><strong>Reservation deposit:</strong> RM 15.00</p>
+                                <a class="btn" href="reservation.html?r=siam-thaiger">Reserve at Siam Thaiger Thai Cafe</a>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </section>
+        </main>
+        
+        <!-- Shared footer -->
+        <footer class="site-footer">
+            <div class="footer-inner">
+                <div class="footer-brand">
+                    <a class="brand" href="index.html">
+                        <span class="logo">
+                            <img class="logo-base" src="images/logo.png" alt="" width="240" height="240">
+                            <img class="logo-mark" src="images/restaurantTapir.png" alt="" width="192" height="192">
+                        </span>
+                        <span class="brand-name">TapirFind</span>
+                    </a>
+                    <p>Discover restaurants across Malaysia.</p>
+                </div>
+                <nav class="footer-col" aria-labelledby="footer-explore">
+                    <h2 id="footer-explore">Explore</h2>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About TapirFind</a></li>
+                        <li><a href="restaurants.html">Restaurants</a></li>
+                        <li><a href="recommend.html">Get a recommendation</a></li>
+                    </ul>
+                </nav>
+                <nav class="footer-col" aria-labelledby="footer-plan">
+                    <h2 id="footer-plan">Plan your visit</h2>
+                    <ul>
+                        <li><a href="reservation.html">Reserve a table</a></li>
+                        <li><a href="bill.html">Bill estimate</a></li>
+                        <li><a href="register.html">Create an account</a></li>
+                    </ul>
+                </nav>
+                <nav class="footer-col" aria-labelledby="footer-popular">
+                    <h2 id="footer-popular">Popular restaurants</h2>
+                    <ul>
+                        <li><a href="restaurants.html#cikgu-mi">Nasi Berlauk Cikgu Mi</a></li>
+                        <li><a href="restaurants.html#desi-swaad">Desi Swaad Kitchen</a></li>
+                        <li><a href="restaurants.html#zen-house">Zen House Japanese Vegetarian Restaurant</a></li>
+                    </ul>
+                </nav>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 TapirFind.</p>
+                <a href="#">Back to top</a>
+            </div>
+        </footer>
+    </body>
+</html>

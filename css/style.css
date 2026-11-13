@@ -1,0 +1,1830 @@
+:root {
+    /* Colours: black, white and green */
+    --black: #252b27; /* Soft black for header, footer and headings */
+    --charcoal: #353d38; /* Hover colour on black */
+    --green: #1e7a48; /* Main green for buttons, links and active states */
+    --green-dark: #14573a; /* Darker green for hover */
+    --green-light: #4ade80; /* Bright green for use on black and focus rings */
+    --tint: #e6f2ea; /* Pale green for soft backgrounds */
+    --pale: #f4f8f5;
+    --paper: #f7f8f6; /* Off-white page background */
+    --ink: #1f2521; /* Body text */
+    --muted: #4b5a50; /* Secondary text */
+    --line: #cdd8d0; /* Borders */
+    --error: #b3261e;
+    --space: clamp(2.5rem, 6vw, 4.5rem); /* Vertical padding of each section */
+    --heading-gap: 1.5rem; /* Gap between a heading and its content */
+}
+
+* {
+    box-sizing: border-box;
+}
+
+/* Stops the page jumping when a pop-up locks scrolling */
+html {
+    scrollbar-gutter: stable;
+}
+
+body {
+    margin: 0;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    line-height: 1.6;
+    color: var(--ink);
+    background-color: var(--paper);
+    background-size:
+        auto,
+        auto,
+        auto,
+        1.375rem 1.375rem;
+    background-attachment: fixed;
+}
+
+h1, h2, h3 {
+    line-height: 1.2;
+    color: var(--black);
+}
+
+/* Bold text at 600 weight*/
+h1, h2, h3, h4, h5, h6, strong, b, th, dt {
+    font-weight: 600;
+}
+
+h1 {
+    font-size: 240%;
+    margin: 0 0 1.5%;
+}
+
+h2 {
+    font-size: 170%;
+    margin: 0 0 2%;
+}
+
+h3 {
+    font-size: 120%;
+    margin: 0 0 1%;
+}
+
+h4 {
+    font-size: 100%;
+    margin: 2% 0 1%;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+a {
+    color: var(--green);
+}
+
+:focus-visible {
+    outline: 0.1875rem solid var(--green);
+    outline-offset: 0.125rem;
+}
+
+/* Keeps anchor links clear of the sticky header */
+[id] {
+    scroll-margin-top: 5rem;
+}
+
+.site-header :focus-visible, .site-footer :focus-visible {
+    outline-color: var(--green-light); /* Bright green shows up on black */
+}
+
+hr {
+    margin: 0;
+    border: 0;
+    border-top: 0.0625rem solid var(--line);
+}
+
+/* Header and navigation */
+.site-header {
+    position: sticky;
+    top: 0;
+    z-index: 5;
+    background: var(--black);
+    color: #fff;
+    border-bottom: 0.1875rem solid var(--green);
+}
+
+.bar {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.5em 2%;
+    max-width: 90%;
+    margin: 0 auto;
+    padding: 0.6em 0;
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 3%;
+    color: #fff;
+    text-decoration: none;
+    font-size: 125%;
+    font-weight: 500;
+}
+
+.site-header nav ul {
+    display: grid;
+    grid-auto-columns: 6.625rem; /* Fixed width so the active link does not resize the others */
+    grid-auto-flow: column;
+    gap: 0.125rem;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.site-header nav a {
+    display: block;
+    padding: 0.5em 0.4em;
+    font-size: 0.9375rem;
+    color: #fff;
+    text-align: center;
+    white-space: nowrap;
+    text-decoration: none;
+    border-radius: 0.25rem;
+}
+
+.site-header nav a:hover {
+    background: var(--charcoal);
+}
+
+.site-header nav a.active {
+    background: var(--green);
+}
+
+/* Hamburger button is hidden on desktop and shown on mobile */
+.nav-toggle {
+    display: none;
+    align-items: center;
+    justify-content: center;
+    width: 2.75rem;
+    height: 2.75rem;
+    padding: 0;
+    color: #fff;
+    background: var(--black);
+    border: 0.0625rem solid var(--green-light);
+    border-radius: 0.25rem;
+    cursor: pointer;
+}
+
+.burger, .burger::before, .burger::after {
+    display: block;
+    width: 1.4rem;
+    height: 0.125rem;
+    background: currentColor;
+    border-radius: 0.125rem;
+    transition:
+        transform 0.2s ease,
+        top 0.2s ease;
+}
+
+.burger {
+    position: relative;
+}
+
+.burger::before, .burger::after {
+    content: "";
+    position: absolute;
+    left: 0;
+}
+
+.burger::before {
+    top: -0.4rem;
+}
+
+.burger::after {
+    top: 0.4rem;
+}
+
+/* Bars turn into an X when the menu is opened */
+.nav-toggle[aria-expanded="true"] .burger {
+    background: transparent;
+}
+
+.nav-toggle[aria-expanded="true"] .burger::before {
+    top: 0;
+    transform: rotate(45deg);
+}
+
+.nav-toggle[aria-expanded="true"] .burger::after {
+    top: 0;
+    transform: rotate(-45deg);
+}
+
+/* Page layout */
+.hero {
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Logo and text sit together in the middle */
+    gap: 2rem clamp(2rem, 5vw, 4rem);
+    max-width: 90%;
+    margin: 0 auto;
+    padding: var(--space) 0;
+}
+
+/* Same text width on every page, text left-aligned */
+.hero-text {
+    flex: 0 1 36rem;
+    min-width: 0;
+}
+
+.hero-text > h1 {
+    margin: 0 0 1rem;
+}
+
+.hero-text > p {
+    margin: 0 0 1rem;
+}
+
+.hero-text > :last-child {
+    margin-bottom: 0;
+}
+
+/* Home page logo is the navbar logo, drawn larger */
+.hero-logo {
+    flex: none;
+    --logo-size: min(16rem, 70vw);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.lead {
+    max-width: 45rem;
+    font-size: 110%;
+}
+
+.hero-text .lead {
+    max-width: none;
+}
+
+.wrap {
+    max-width: 90%;
+    margin: 0 auto;
+    padding: var(--space) 0;
+}
+
+.wrap > h1 {
+    margin: 0 0 1rem;
+}
+
+.wrap > :last-child {
+    margin-bottom: 0; /* Section padding sets the bottom gap */
+}
+
+.wrap > h2 {
+    margin: 0 0 var(--heading-gap);
+}
+
+.wrap.narrow {
+    max-width: 60%;
+}
+
+/* Full-width tinted band */
+section.wrap.alt {
+    --alt-bg: var(--tint);
+    max-width: none;
+    margin: 0;
+    padding: var(--space) 5%;
+    background: var(--alt-bg);
+}
+
+.grid {
+    display: grid;
+    gap: 1.25em 2%;
+}
+
+.g3 {
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.g4 {
+    grid-template-columns: repeat(4, 1fr);
+}
+
+/* Cards and panels */
+.panel {
+    padding: 5% 5.5%;
+    background: #fff;
+    border: 0.0625rem solid var(--line);
+    border-radius: 0.375rem;
+}
+
+.panel p {
+    margin: 0;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    background: #fff;
+    border: 0.0625rem solid var(--line);
+    border-radius: 0.375rem;
+}
+
+.card-body {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    padding: 5% 5.5% 6%;
+}
+
+.card-body .btn {
+    align-self: flex-start;
+    margin-top: auto;
+}
+
+/* Keeps score and button aligned across cards */
+.card-body .score {
+    margin: auto 0 0.75rem;
+}
+
+.card-body .score + .btn {
+    margin-top: 0;
+}
+
+.meta {
+    margin: 0 0 3%;
+    font-size: 95%;
+    color: var(--muted);
+}
+
+.card h2 {
+    margin: 0 0 2%;
+    font-size: 120%;
+}
+
+.details h3 {
+    margin: 4% 0 2%;
+    font-size: 100%;
+}
+
+.location, .featured {
+    margin: 0 0 3%;
+    font-size: 95%;
+    color: var(--black);
+}
+
+.dishes {
+    margin: 0 0 4%;
+    padding: 0;
+    list-style: none;
+}
+
+.dishes li {
+    display: flex;
+    justify-content: space-between;
+    gap: 4%;
+    padding: 0.25em 0;
+    border-bottom: 0.0625rem dotted var(--line);
+}
+
+.wide {
+    text-align: center;
+    width: 100%;
+}
+
+/* Buttons */
+.btn {
+    display: inline-block;
+    padding: 0.65em 1.1em;
+    font: inherit;
+    font-weight: 600;
+    color: #fff;
+    text-decoration: none;
+    background: var(--green);
+    border: 0.125rem solid var(--green);
+    border-radius: 0.25rem;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background: var(--green-dark);
+    border-color: var(--green-dark);
+}
+
+.btn-ghost {
+    color: var(--green);
+    background: transparent;
+}
+
+.btn-ghost:hover {
+    color: #fff;
+}
+
+.large {
+    width: min(100%, 22rem);
+    margin-top: var(--heading-gap);
+}
+
+/* Forms */
+form {
+    margin-top: 3%;
+}
+
+.field {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 2.5%;
+}
+
+label, legend {
+    font-weight: 600;
+}
+
+input, select, textarea {
+    width: 100%;
+    padding: 0.6em 0.7em;
+    font: inherit;
+    background: #fff;
+    border: 0.0625rem solid #8a9a90;
+    border-radius: 0.25rem;
+}
+
+input[type="radio"], input[type="checkbox"] {
+    width: auto;
+    margin-right: 1%;
+}
+
+input[readonly] {
+    background: var(--tint);
+}
+
+fieldset {
+    margin: 0 0 3%;
+    padding: 2% 3% 3%;
+    background: #fff;
+    border: 0.0625rem solid var(--line);
+    border-radius: 0.375rem;
+}
+
+fieldset label, .inline {
+    display: block;
+    margin: 0.25em 0;
+    font-weight: 400;
+}
+
+.inline {
+    margin-bottom: 3%;
+}
+
+.row2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1em 3%;
+}
+
+.ok {
+    padding: 2% 3%;
+    background: var(--tint);
+    border: 0.0625rem solid var(--green);
+    border-radius: 0.25rem;
+}
+
+[hidden] {
+    display: none !important;
+}
+
+#results {
+    margin-top: 4%;
+}
+
+/* Bill page */
+.dish-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    margin: 0 0 0.75rem;
+    padding: 0.6rem 0.9rem;
+    background: var(--pale);
+    border: 0.0625rem solid var(--line);
+    border-radius: 0.375rem;
+}
+
+.dish-row label {
+    font-weight: 400;
+}
+
+.dish-row input {
+    flex: none;
+    width: 5.5rem;
+    text-align: center;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+td {
+    padding: 0.4em 0;
+    border-bottom: 0.0625rem dotted var(--line);
+}
+
+td + td {
+    text-align: right;
+}
+
+.total td {
+    font-size: 110%;
+    font-weight: 600;
+    color: var(--black);
+    border-top: 0.125rem solid var(--green);
+}
+
+#billOut {
+    margin: 3% 0;
+}
+
+/* Error pop-up */
+#scrnOverlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 20;
+    width: 100%;
+    height: 100%;
+    background: rgba(37, 43, 39, 0.7);
+}
+
+.window {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    z-index: 21;
+    width: 90%;
+    max-width: 100%;
+    max-height: 85%;
+    overflow: auto;
+    padding: 5% 6%;
+    background: var(--tint);
+    border: 0.1875rem solid var(--green);
+    border-radius: 1rem;
+    box-shadow: 0 0.375rem 1.25rem rgba(0, 0, 0, 0.35);
+    transform: translate(-50%, -50%);
+}
+
+.window h2 {
+    font-size: 130%;
+    margin-bottom: 2%;
+}
+
+.window ul {
+    margin: 0 0 4%;
+    padding-left: 6%;
+}
+
+.window li {
+    margin-bottom: 1%;
+}
+
+/* Error pop-up on wider screens */
+@media (min-width: 768px) {
+    .window {
+        width: 60%;
+        padding: 2.5% 3%;
+    }
+}
+
+@media (min-width: 1024px) {
+    .window {
+        width: 40%;
+        padding: 2% 2.5%;
+    }
+}
+
+/* Clickable restaurant images and details pop-up */
+.img-btn {
+    position: relative;
+    display: block;
+    width: 100%;
+    padding: 0;
+    overflow: hidden;
+    font: inherit;
+    background: none;
+    border: 0;
+    cursor: pointer;
+}
+
+.img-btn img {
+    transition: transform 0.25s ease;
+}
+
+.img-btn:hover img, .img-btn:focus-visible img {
+    transform: scale(1.04);
+}
+
+.title-btn {
+    padding: 0;
+    font: inherit;
+    color: inherit;
+    text-align: left;
+    background: none;
+    border: 0;
+    cursor: pointer;
+}
+
+.title-btn:hover {
+    color: var(--green);
+    text-decoration: underline;
+}
+
+.view-btn {
+    align-self: flex-start;
+    margin-top: 2%;
+}
+
+/* Details pop-up: a green title bar, then a scrolling body */
+.rest-window {
+    left: 50%;
+    display: flex;
+    flex-direction: column;
+    width: min(90rem, 98%); /* Wide, so most details fit without scrolling */
+    max-width: 100%;
+    max-height: 94%;
+    padding: 0; /* Title bar and body set their own padding */
+    overflow: hidden;
+    background: #fff;
+    border: 0;
+    border-radius: 0.75rem;
+    box-shadow: 0 1.25rem 3rem rgba(0, 0, 0, 0.45);
+    transform: translateX(-50%);
+}
+
+/* Title bar: name on the left, close button on the right */
+.rest-head {
+    display: flex;
+    flex: none;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    padding: 0.75rem 1rem 0.75rem 1.5rem;
+    color: #fff;
+    background: var(--green-dark);
+    border-bottom: 0.1875rem solid var(--green-light);
+}
+
+.rest-window .rest-head h2 {
+    margin: 0;
+    font-size: 130%;
+    color: #fff;
+}
+
+/* Close button */
+.close-x {
+    flex: none;
+    display: grid;
+    place-items: center;
+    width: 2.75rem; /* Big enough to tap */
+    height: 2.75rem;
+    padding: 0 0 0.2rem; /* Lifts the cross slightly */
+    font-family: inherit;
+    font-size: 1.75rem;
+    line-height: 1;
+    color: #fff;
+    background: transparent;
+    border: 0.125rem solid var(--green-light);
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background 0.2s ease;
+}
+
+.close-x:hover {
+    color: var(--green-dark);
+    background: var(--green-light);
+}
+
+.rest-head .close-x:focus-visible {
+    outline-color: var(--green-light);
+}
+
+/* Only this box scrolls, so the title bar stays in view */
+.rest-scroll {
+    flex: 1;
+    min-height: 0;
+    margin: 0 0.25rem 0.5rem 0; /* Keeps the scrollbar away from the rounded corner */
+    padding: 1rem 1.25rem 0.5rem 1.5rem;
+    overflow-y: auto;
+    scrollbar-width: thin;
+    scrollbar-color: var(--green) transparent;
+}
+
+.rest-pic {
+    margin-bottom: 1rem;
+}
+
+.rest-window .dishes {
+    padding-left: 0;
+}
+
+.rest-info > :last-child {
+    margin-bottom: 0;
+}
+
+.rest-window .rest-info .meta {
+    margin: 0 0 0.5rem;
+    font-size: 100%;
+}
+
+.rest-window .rest-info .location {
+    margin: 0 0 1rem;
+    padding-bottom: 1rem;
+    border-bottom: 0.0625rem solid var(--line);
+}
+
+/* Cuisine, Halal and Dietary lines in tight rows */
+.rest-window .rest-info .tags {
+    margin: 0 0 0.3rem;
+    padding-bottom: 0;
+    border-bottom: 0;
+}
+
+.rest-window .rest-info .tags:last-of-type {
+    margin-bottom: 1rem;
+    padding-bottom: 1rem;
+    border-bottom: 0.0625rem solid var(--line);
+}
+
+/* Branches shown as a short list */
+.rest-window .branches {
+    margin: 0.35rem 0 0;
+    padding-left: 1.25rem;
+}
+
+.rest-window .branches li {
+    margin: 0 0 0.2rem;
+}
+
+/* Picture on the left and details on the right in Desktop view */
+@media (min-width: 1024px) {
+    .rest-scroll {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+        gap: 0 2rem;
+        align-items: start;
+        padding: 1.25rem 1.5rem 1rem 1.75rem;
+    }
+
+    /* Each picture fills its column */
+    .rest-scroll .rest-pic {
+        align-self: stretch;
+        margin-bottom: 0;
+    }
+}
+
+.rest-window img {
+    border-radius: 0.5rem;
+}
+
+.rest-window h3 {
+    margin: 1rem 0 0.5rem;
+    font-size: 100%;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: var(--green-dark);
+}
+
+/* Signature dishes with prices on the right */
+.rest-window .dishes li {
+    padding: 0.4em 0;
+}
+
+.rest-window .dishes li span + span {
+    font-weight: 600;
+    color: var(--green-dark);
+    white-space: nowrap;
+}
+
+/* Deposit line in a soft green box */
+.rest-window .deposit {
+    margin: 0.75rem 0;
+    padding: 0.6rem 1rem;
+    background: var(--tint);
+    border-left: 0.25rem solid var(--green);
+    border-radius: 0.25rem;
+}
+
+.rest-window .reserve {
+    margin: 0;
+}
+
+/* Picture gallery: main picture, arrows, counter, thumbnails */
+.rest-pic {
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+}
+
+.gallery-main {
+    position: relative;
+    aspect-ratio: 3 / 2;
+    max-height: 20rem;
+}
+
+.rest-window .gallery-main img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    object-fit: cover;
+    object-position: center;
+}
+
+.gal-arrow {
+    position: absolute;
+    top: 50%;
+    z-index: 2;
+    display: grid;
+    place-items: center;
+    width: 2.75rem;
+    height: 2.75rem;
+    padding: 0 0 0.2rem;
+    font-family: inherit;
+    font-size: 2rem;
+    line-height: 1;
+    color: #fff;
+    background: rgba(37, 43, 39, 0.75);
+    border: 0.125rem solid rgba(255, 255, 255, 0.7);
+    border-radius: 50%;
+    cursor: pointer;
+    transform: translateY(-50%);
+}
+
+.gal-arrow:hover {
+    background: var(--green);
+}
+
+.gal-arrow:focus-visible {
+    outline-color: #fff;
+}
+
+.gal-prev {
+    left: 0.5rem;
+}
+
+.gal-next {
+    right: 0.5rem;
+}
+
+.gal-count {
+    position: absolute;
+    top: 0.625rem;
+    right: 0.625rem;
+    z-index: 2;
+    margin: 0;
+    padding: 0.15rem 0.65rem;
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: #fff;
+    background: rgba(37, 43, 39, 0.75);
+    border-radius: 1rem;
+}
+
+.thumbs {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.thumb {
+    flex: 1 1 0;
+    min-width: 0;
+    padding: 0;
+    overflow: hidden;
+    line-height: 0;
+    background: none;
+    border: 0.1875rem solid transparent;
+    border-radius: 0.5rem;
+    opacity: 0.65;
+    cursor: pointer;
+}
+
+.thumb:hover, .thumb[aria-current="true"] {
+    opacity: 1;
+}
+
+.thumb[aria-current="true"] {
+    border-color: var(--green);
+}
+
+.rest-window .thumb img {
+    width: 100%;
+    height: 3.5rem;
+    margin: 0;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 0.25rem;
+}
+
+/* In Desktop view, the main picture fills the space above the thumbnails */
+@media (min-width: 1024px) {
+    .gallery-main {
+        flex: 1;
+        min-height: 16rem;
+        aspect-ratio: auto;
+        max-height: none;
+    }
+}
+
+@media (max-width: 767px) {
+    .rest-window {
+        width: 96%;
+    }
+
+    .rest-window .reserve {
+        display: block;
+        text-align: center;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .img-btn img, .close-x, .burger, .burger::before, .burger::after, .link-arrow span {
+        transition: none;
+    }
+}
+
+/* Shared reset for the layouts below */
+.values, .steps {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.values p, .steps p {
+    margin: 0;
+}
+
+/* Values layout: heading on the left, list on the right and stacks when narrow */
+.split {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem 4rem;
+}
+
+.split > h2 {
+    flex: 1 1 14rem;
+    margin: 0;
+}
+
+.values {
+    flex: 3 1 20rem;
+}
+
+.values li {
+    padding: 1rem 0;
+    border-top: 0.0625rem solid var(--line);
+}
+
+.values li:first-child {
+    padding-top: 0;
+    border-top: 0;
+}
+
+.values li:last-child {
+    padding-bottom: 0;
+}
+
+.values h3 {
+    margin: 0 0 0.25rem;
+}
+
+/* Steps layout: numbered and joined by a line, and stacks on mobile */
+.steps {
+    display: flex;
+    gap: 2rem;
+    counter-reset: step;
+}
+
+.steps li {
+    position: relative;
+    flex: 1 1 0;
+    padding-top: 3.25rem;
+    counter-increment: step;
+}
+
+.steps li::before {
+    content: counter(step);
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: grid;
+    place-items: center;
+    width: 2.25rem;
+    height: 2.25rem;
+    font-weight: 600;
+    color: #fff;
+    background: var(--green);
+    border-radius: 50%;
+}
+
+.steps li:not(:last-child)::after {
+    content: "";
+    position: absolute;
+    top: 1.0625rem;
+    right: -1.5rem;
+    left: 2.75rem;
+    height: 0.125rem;
+    background: var(--line);
+}
+
+.steps h3 {
+    margin: 0 0 0.25rem;
+}
+
+/* Home page audience chips */
+.chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.chips li {
+    flex: 1 1 9rem; /* Four per row on desktop, two on mobile */
+    padding: 1rem 1.25rem;
+    font-size: 110%;
+    font-weight: 600;
+    color: var(--black);
+    background: #fff;
+    border: 0.0625rem solid var(--line);
+    border-radius: 0.375rem;
+}
+
+.more {
+    margin: var(--heading-gap) 0 0;
+}
+
+/* Read more links */
+.link-arrow {
+    display: inline-block;
+    padding-bottom: 0.15rem;
+    font-weight: 600;
+    color: var(--green-dark);
+    text-decoration: none;
+    border-bottom: 0.125rem solid var(--green);
+}
+
+.link-arrow .nowrap {
+    white-space: nowrap;
+}
+
+.link-arrow span span {
+    display: inline-block;
+    transition: transform 0.2s ease;
+}
+
+.link-arrow:hover {
+    color: var(--black);
+    border-bottom-color: var(--black);
+}
+
+.link-arrow:hover span span {
+    transform: translateX(0.3rem);
+}
+
+/* Call to action on the about page */
+.cta {
+    text-align: center;
+}
+
+.cta p {
+    margin: 0;
+}
+
+.cta .btn {
+    margin: 0.25rem;
+}
+
+/* Footer */
+.site-footer {
+    color: #d9dfdb;
+    background: var(--black);
+    border-top: 0.1875rem solid var(--green);
+}
+
+.footer-inner, .footer-bottom {
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 90%;
+    margin: 0 auto;
+}
+
+.footer-inner {
+    gap: 2rem 3rem;
+    padding: clamp(2rem, 5vw, 3.5rem) 0;
+}
+
+.footer-brand {
+    flex: 2 1 18rem;
+}
+
+.footer-brand p {
+    max-width: 24rem;
+    margin: 0.75rem 0 0;
+}
+
+.footer-col {
+    flex: 1 1 10rem;
+}
+
+.site-footer h2 {
+    margin: 0 0 0.75rem;
+    font-size: 100%;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: #fff;
+}
+
+.footer-col ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.footer-col li + li {
+    margin-top: 0.4rem;
+}
+
+.site-footer a {
+    color: #d9dfdb;
+    text-decoration: none;
+}
+
+.site-footer a:hover {
+    color: var(--green-light);
+    text-decoration: underline;
+}
+
+.site-footer .brand {
+    gap: 0.6rem;
+    font-size: 130%;
+    color: #fff;
+}
+
+.footer-bottom {
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 0.5rem 2rem;
+    padding: 1.25rem 0;
+    font-size: 90%;
+    border-top: 0.0625rem solid rgba(255, 255, 255, 0.2);
+}
+
+.footer-bottom p {
+    flex: 1 1 24rem;
+    margin: 0;
+}
+
+/* Tablet navbar (768px to 1023px) which shows the logo on row one and navbar links on row two */
+@media (min-width: 768px) and (max-width: 1023px) {
+    [id] {
+        scroll-margin-top: 7rem;
+    }
+
+    .site-header nav {
+        width: 100%;
+    }
+
+    .site-header nav ul {
+        grid-auto-columns: minmax(0, 1fr);
+    }
+
+    .site-header nav a {
+        padding: 0.5em 0.2em;
+        font-size: 0.875rem;
+    }
+}
+
+/* Mobile only (up to 767px) displays the hamburger menu */
+@media (max-width: 767px) {
+    .nav-toggle {
+        display: flex;
+    }
+
+    /* Menu drops down over the page */
+    .site-header nav {
+        position: absolute;
+        top: 100%;
+        right: 0;
+        left: 0;
+    }
+
+    .site-header nav ul {
+        display: none;
+        grid-auto-columns: auto;
+        grid-auto-flow: row;
+        padding: 0.5rem 5% 1rem;
+        background: var(--black);
+        border-top: 0.0625rem solid rgba(255, 255, 255, 0.2);
+        box-shadow: 0 0.625rem 1.25rem rgba(0, 0, 0, 0.35);
+    }
+
+    .site-header nav ul.open {
+        display: grid;
+    }
+
+    .site-header nav a {
+        text-align: left;
+    }
+}
+
+/* Tablet (768px to 1023px) */
+@media (max-width: 1023px) {
+    h1 {
+        font-size: 210%;
+    }
+
+    .wrap.narrow {
+        max-width: 80%;
+    }
+
+    .g3, .g4 {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .hero {
+        flex-direction: column;
+        gap: 1.5em;
+    }
+
+    .hero-text {
+        flex: none;
+        width: 100%;
+    }
+}
+
+/* Mobile (up to 767px) */
+@media (max-width: 767px) {
+    h1 {
+        font-size: 180%;
+    }
+
+    .wrap.narrow {
+        max-width: 90%;
+    }
+
+    .g3, .g4, .row2 {
+        grid-template-columns: 1fr;
+    }
+
+    .site-header {
+        position: relative; /* Anchor for the drop-down menu */
+    }
+
+    .chips li {
+        flex-basis: 100%;
+        padding: 0.75rem 1.25rem;
+    }
+
+    .steps {
+        flex-direction: column;
+        gap: 0;
+    }
+
+    .steps li {
+        padding: 0 0 1.75rem 3.5rem;
+    }
+
+    .steps li:last-child {
+        padding-bottom: 0;
+    }
+
+    .steps li:not(:last-child)::after {
+        top: 2.5rem;
+        right: auto;
+        bottom: 0.25rem;
+        left: 1.0625rem;
+        width: 0.125rem;
+        height: auto;
+    }
+
+    .steps h3 {
+        margin: 0.2rem 0 0.25rem;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    * {
+        scroll-behavior: auto !important;
+    }
+}
+
+/* Without JavaScript, all slides on the rotator show as a list */
+.rotator {
+    background: #fff;
+    border: 0.0625rem solid var(--line);
+    border-radius: 0.375rem;
+    overflow: hidden;
+}
+
+.slides {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.slide {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 2rem;
+    padding: 1.5rem;
+}
+
+.slide img {
+    border-radius: 0.375rem;
+    width: 100%;
+}
+
+.slide-text h3 {
+    margin: 0 0 0.5rem;
+}
+
+.slide-text p {
+    margin: 0 0 0.75rem;
+}
+
+.slide-count {
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: var(--green-dark);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.rot-btn {
+    min-width: 2.75rem;
+    min-height: 2.75rem;
+    padding: 0.4em 0.9em;
+    font: inherit;
+    font-weight: 600;
+    color: var(--green-dark);
+    background: #fff;
+    border: 0.125rem solid var(--green);
+    border-radius: 0.25rem;
+    cursor: pointer;
+}
+
+.rot-btn:hover {
+    color: #fff;
+    background: var(--green-dark);
+    border-color: var(--green-dark);
+}
+
+.rotator-controls[hidden] {
+    display: none;
+}
+
+/* With JavaScript, the rotator shows a centred card with a faded card on each side */
+.rotator.on {
+    position: relative;
+    padding: 0.5rem 0 1.5rem;
+    overflow: hidden; /* Hides cards that slide past the edge */
+    background: none;
+    border: 0;
+}
+
+.stage {
+    position: relative;
+}
+
+/* All cards share one grid cell, so the stage fits the tallest */
+.rotator.on .slides {
+    display: grid;
+    justify-items: center;
+}
+
+.rotator.on .slide {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Picture on the left, details on the right */
+    grid-area: 1 / 1;
+    width: min(46rem, 74%);
+    padding: 0;
+    overflow: hidden;
+    background: #fff;
+    border: 0.0625rem solid var(--line);
+    border-radius: 0.5rem;
+    box-shadow: 0 0.5rem 1.5rem rgba(37, 43, 39, 0.12);
+    transition:
+        transform 0.35s cubic-bezier(0.22, 0.8, 0.3, 1),
+        opacity 0.35s ease;
+}
+
+.rotator.on .slide img {
+    height: 100%;
+    border-radius: 0;
+    object-fit: cover;
+    object-position: center;
+}
+
+.rotator.on .slide-text {
+    align-self: center;
+    padding: 1rem 1.25rem;
+    font-size: 0.95rem;
+}
+
+/* Short description keeps the card in landscape */
+.rotator.on .slide-text .desc {
+    display: -webkit-box;
+    overflow: hidden;
+    line-clamp: 2;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+}
+
+.rotator.on .slide-text p:last-child {
+    margin-bottom: 0;
+}
+
+.rotator.on .slide.current {
+    z-index: 3;
+    opacity: 1;
+    transform: none;
+    /* Faint reflection under the middle card (for Chrome, Edge, Safari only) */
+    -webkit-box-reflect: below 0.375rem linear-gradient(to bottom, transparent 90%, rgba(255, 255, 255, 0.22));
+}
+
+.rotator.on .slide.next, .rotator.on .slide.prev {
+    z-index: 2;
+    opacity: 0.35;
+    cursor: pointer;
+}
+
+.rotator.on .slide.next {
+    transform: translateX(84%) scale(0.8);
+}
+
+.rotator.on .slide.prev {
+    transform: translateX(-84%) scale(0.8);
+}
+
+.rotator.on .slide.far {
+    z-index: 1;
+    opacity: 0;
+    transform: scale(0.6);
+    pointer-events: none;
+}
+
+/* Clicking a faded card selects the card, not the button inside */
+.rotator.on .slide.next *, .rotator.on .slide.prev * {
+    pointer-events: none;
+}
+
+/* Arrows sit on each side of the stage, level with the card */
+.rot-arrow {
+    position: absolute;
+    top: 50%;
+    z-index: 5;
+    display: grid;
+    place-items: center;
+    width: 3rem;
+    height: 3rem;
+    padding: 0;
+    font-size: 1.25rem;
+    border-radius: 50%;
+    box-shadow: 0 0.25rem 0.75rem rgba(37, 43, 39, 0.2);
+    transform: translateY(-50%);
+}
+
+.rot-prev {
+    right: calc(50% + min(23rem, 37%) + 0.75rem); /* Just outside the left edge of the middle card */
+}
+
+.rot-next {
+    left: calc(50% + min(23rem, 37%) + 0.75rem); /* Just outside the right edge of the middle card */
+}
+
+/* Pause button and dots sit below the reflection */
+.rotator-controls {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 2.5rem;
+}
+
+.dots {
+    display: flex;
+    gap: 0.25rem;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+/* Each dot is a button, so the click area stays large */
+.dot {
+    width: 2.75rem;
+    height: 2.75rem;
+    padding: 0;
+    background: none;
+    border: 0;
+    cursor: pointer;
+}
+
+.dot::before {
+    content: "";
+    display: block;
+    width: 0.875rem;
+    height: 0.875rem;
+    margin: 0 auto;
+    background: #fff;
+    border: 0.125rem solid var(--green-dark);
+    border-radius: 50%;
+}
+
+.dot[aria-current="true"]::before {
+    background: var(--green-dark);
+}
+
+@media (max-width: 767px) {
+    .slide {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+        padding: 1rem;
+    }
+
+    .rotator.on .slide {
+        grid-template-columns: 1fr;
+        width: 76%;
+    }
+
+    /* Crop tall photos to keep cards short */
+    .rotator.on .slide img {
+        height: auto;
+        aspect-ratio: 16 / 9;
+    }
+
+    .rotator.on .slide-text {
+        padding: 0.75rem 1rem;
+        font-size: 0.9rem;
+    }
+
+    .rotator.on .slide-text p {
+        margin-bottom: 0.4rem;
+    }
+
+    /* Long addresses form two lines on phones */
+    .rotator.on .slide-text .location {
+        display: -webkit-box;
+        overflow: hidden;
+        line-clamp: 2;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+    }
+
+    .rotator.on .slide.next {
+        transform: translateX(95%) scale(0.82);
+    }
+
+    .rotator.on .slide.prev {
+        transform: translateX(-95%) scale(0.82);
+    }
+
+    .rot-arrow {
+        width: 2.5rem;
+        height: 2.5rem;
+    }
+
+    .rot-prev {
+        right: auto;
+        left: 1%; /* Too narrow to sit outside the card; it stays at the screen edge */
+    }
+
+    .rot-next {
+        right: 1%;
+        left: auto;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .rotator.on .slide {
+        transition: none;
+    }
+}
+
+/* Recommendation page: best match is large while the other matches are smaller cards below */
+.top-pick {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 2rem;
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+    background: #fff;
+    border: 0.125rem solid var(--green);
+    border-radius: 0.375rem;
+}
+
+.top-pick img {
+    width: 100%;
+    border-radius: 0.375rem;
+}
+
+.top-pick-text h3 {
+    margin: 0 0 0.5rem;
+}
+
+.top-pick-text p {
+    margin: 0 0 0.75rem;
+}
+
+.badge {
+    display: inline-block;
+    padding: 0.2em 0.7em;
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: #fff;
+    background: var(--green-dark);
+    border-radius: 1rem;
+}
+
+.reasons {
+    margin: 0 0 0.75rem;
+    padding-left: 1.25rem;
+}
+
+/* Note above the reservation form, which shows a dark green pill with a star for the top pick */
+.rec-note {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin: 0 0 1rem;
+    padding: 0.6rem 1.25rem 0.6rem 0.6rem;
+    background: #fff;
+    border: 0.0625rem solid var(--line);
+    border-radius: 0.5rem;
+}
+
+.rec-note.rec-hit {
+    color: #fff;
+    background: linear-gradient(100deg, var(--green-dark), var(--green));
+    border-color: var(--green-dark);
+    box-shadow: 0 0.25rem 0.75rem rgba(20, 87, 58, 0.25);
+}
+
+.rec-note.rec-hit::before {
+    /* Star is an image so it is always centred */
+    content: "";
+    flex: none;
+    width: 2.25rem;
+    height: 2.25rem;
+    background:
+        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpolygon fill='%2314573a' points='12,2.05 14.47,9.65 22.46,9.65 16,14.35 18.47,21.95 12,17.25 5.53,21.95 8,14.35 1.54,9.65 9.53,9.65'/%3E%3C/svg%3E")
+            center / 1.25rem 1.25rem no-repeat,
+        var(--green-light);
+    border-radius: 0.375rem;
+}
+
+.rec-note.rec-hit strong {
+    color: var(--green-light);
+}
+
+@media (max-width: 767px) {
+    .top-pick {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+        padding: 1rem;
+    }
+}
+
+.card:hover {
+    box-shadow: 0 0.375rem 1rem rgba(37, 43, 39, 0.18);
+}
+
+.rest-pic {
+    position: relative;
+    margin-bottom: 3%;
+}
+
+.rest-window .rest-pic img {
+    margin-bottom: 0;
+}
+
+/* Brand logo: green base with the 192px mark on top. Both scale with --logo-size */
+:root {
+    --brand-font: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    --logo-size: 2.75rem; /* Navbar logo size on desktop */
+    --logo-mark: 72%; /* How much of the base logo the mark covers */
+}
+
+.logo {
+    position: relative;
+    flex: none; /* Never pressed by a long menu */
+    width: var(--logo-size);
+    height: var(--logo-size);
+}
+
+.logo img {
+    position: absolute;
+    display: block;
+    max-width: none;
+}
+
+.logo-base {
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.logo-mark {
+    top: 50%;
+    left: 50%;
+    width: var(--logo-mark);
+    height: var(--logo-mark);
+    object-fit: contain;
+    transform: translate(-50%, -50%);
+}
+
+.brand-name {
+    font-family: var(--brand-font);
+    font-weight: 600;
+    letter-spacing: 0.01em;
+    line-height: 1;
+}
+
+.brand {
+    gap: 0.6rem;
+}
+
+.site-footer .logo {
+    --logo-size: 3.5rem; /* Slightly larger in the footer */
+}
+
+/* Tablet: smaller logo keeps the navbar compact */
+@media (min-width: 768px) and (max-width: 1023px) {
+    :root {
+        --logo-size: 2.5rem;
+    }
+
+    .site-footer .logo {
+        --logo-size: 3.25rem;
+    }
+}
+
+/* Mobile: one logo size next to the hamburger button */
+@media (max-width: 767px) {
+    :root {
+        --logo-size: 2.5rem;
+    }
+
+    .site-footer .logo {
+        --logo-size: 3rem;
+    }
+}
+
+/* Card photos are 3:2 boxes with a small logo in the corner */
+.card-photo {
+    display: block;
+    width: 100%;
+    aspect-ratio: 3 / 2;
+    object-fit: cover;
+    object-position: center;
+}
+
+.pic {
+    position: relative;
+}
+
+.pic .card-logo, .img-btn .card-logo {
+    position: absolute;
+    left: 0.625rem;
+    bottom: 0.625rem;
+    width: auto;
+    height: 2.75rem; /* 44px */
+    max-width: 45%;
+    padding: 0.1875rem;
+    object-fit: contain;
+    background: #fff;
+    border-radius: 0.375rem;
+    box-shadow: 0 0.0625rem 0.25rem rgba(0, 0, 0, 0.4);
+}
+
+.img-btn:hover .card-logo, .img-btn:focus-visible .card-logo {
+    transform: none; /* Photo zooms on hover but logo stays put */
+}
+
+/* Arrows are images so they are always centred */
+.arrow-icon {
+    display: block;
+    width: 1.25rem;
+    height: 1.25rem;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 2.5;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}

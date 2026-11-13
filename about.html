@@ -1,0 +1,182 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="author" content="Ethan Lau Yang Ming">
+        <meta name="title" content="TapirFind">
+        <meta name="description" content="Web Development Assignment 2">
+        <title>About | TapirFind</title>
+        <link rel="stylesheet" href="css/style.css">
+        <script src="js/jquery.min.js"></script>
+        <script src="js/script.js" defer></script>
+    </head>
+
+    <body>
+        <!-- Shared navigation -->
+        <header class="site-header">
+            <div class="bar">
+                <a class="brand" href="index.html">
+                    <span class="logo">
+                        <img class="logo-base" src="images/logo.png" alt="" width="240" height="240">
+                        <img class="logo-mark" src="images/restaurantTapir.png" alt="" width="192" height="192">
+                    </span>
+                    <span class="brand-name">TapirFind</span>
+                </a>
+                <button class="nav-toggle" type="button" id="menuBtn" aria-label="Menu" aria-expanded="false" aria-controls="menu">
+                    <span class="burger"></span>
+                </button>
+                <nav aria-label="Main">
+                    <ul id="menu">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html" class="active" aria-current="page">About</a></li>
+                        <li><a href="restaurants.html">Restaurants</a></li>
+                        <li><a href="recommend.html">Recommend</a></li>
+                        <li><a href="register.html">Register</a></li>
+                        <li><a href="reservation.html">Reserve</a></li>
+                        <li><a href="bill.html">Bill estimate</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+
+        <main>
+            <!-- About section -->
+            <section class="hero">
+                <div class="hero-text">
+                    <h1>About TapirFind</h1>
+                    <p class="lead">
+                        TapirFind was created with the goal of helping people to easily find new dining places in
+                        Malaysia. We provide a simple way to discover restaurants, get recommendations, and make
+                        reservations.
+                    </p>
+                </div>
+                <!-- Same logo as the navbar, drawn larger. -->
+                <div class="hero-logo" role="img" aria-label="TapirFind logo">
+                    <span class="logo">
+                        <img class="logo-base" src="images/logo.png" alt="" width="240" height="240">
+                        <img class="logo-mark" src="images/restaurantTapir.png" alt="" width="192" height="192">
+                    </span>
+                </div>
+            </section>
+
+            <!-- How recommendations work -->
+            <section class="wrap" id="recommendations">
+                <div class="split">
+                    <h2>How recommendations work</h2>
+                    <ul class="values">
+                        <li>
+                            <h3>Dietary &amp; Lifestyle</h3>
+                            <p>
+                                If you choose Vegetarian or Vegan, we only show restaurants that serve those options.
+                                Vegan kitchens also count for vegetarians.
+                            </p>
+                        </li>
+                        <li>
+                            <h3>Halal &amp; Religious Status</h3>
+                            <p>
+                                Choosing Muslim-Friendly or Halal will only show restaurants with those options. Halal
+                                restaurants also count as Muslim-Friendly.
+                            </p>
+                        </li>
+                        <li>
+                            <h3>Cuisine</h3>
+                            <p>Pick a cuisine; restaurants that serve it will be prioritized in the recommendations.</p>
+                        </li>
+                        <li>
+                            <h3>Budget</h3>
+                            <p>We compare your budget with each restaurant's average cost per person.</p>
+                        </li>
+                        <li>
+                            <h3>Dining purpose</h3>
+                            <p>
+                                Different occasions call for different dining experiences; we recommend restaurants
+                                accordingly.
+                            </p>
+                        </li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- Reservations and costs -->
+            <section class="wrap alt" id="reservations">
+                <div class="split">
+                    <h2>Reservations and costs</h2>
+                    <ul class="values">
+                        <li>
+                            <h3>Small deposit</h3>
+                            <p>
+                                Each restaurant requires its own set deposit, which is shown on the listing and
+                                automatically filled in for you when you choose to reserve the restaurant.
+                            </p>
+                        </li>
+                        <li>
+                            <h3>Voucher or card</h3>
+                            <p>Pay the deposit with a 12-digit voucher code or an online card payment.</p>
+                        </li>
+                        <li>
+                            <h3>Know the cost first</h3>
+                            <p>
+                                The bill estimate adds a 10% service charge and 6% tax to your chosen dishes, according
+                                to common taxation numbers in Malaysia; these may or may not apply in the actual
+                                restaurant bill.
+                            </p>
+                        </li>
+                    </ul>
+                </div>
+            </section>
+            <section class="wrap cta">
+                <h2>Ready to find a table?</h2>
+                <p>
+                    <a class="btn" href="recommend.html">Get a recommendation</a>
+                    <a class="btn btn-ghost" href="restaurants.html">Browse restaurants</a>
+                </p>
+            </section>
+        </main>
+
+        <!-- Shared footer -->
+        <footer class="site-footer">
+            <div class="footer-inner">
+                <div class="footer-brand">
+                    <a class="brand" href="index.html">
+                        <span class="logo">
+                            <img class="logo-base" src="images/logo.png" alt="" width="240" height="240">
+                            <img class="logo-mark" src="images/restaurantTapir.png" alt="" width="192" height="192">
+                        </span>
+                        <span class="brand-name">TapirFind</span>
+                    </a>
+                    <p>Discover restaurants across Malaysia.</p>
+                </div>
+                <nav class="footer-col" aria-labelledby="footer-explore">
+                    <h2 id="footer-explore">Explore</h2>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About TapirFind</a></li>
+                        <li><a href="restaurants.html">Restaurants</a></li>
+                        <li><a href="recommend.html">Get a recommendation</a></li>
+                    </ul>
+                </nav>
+                <nav class="footer-col" aria-labelledby="footer-plan">
+                    <h2 id="footer-plan">Plan your visit</h2>
+                    <ul>
+                        <li><a href="reservation.html">Reserve a table</a></li>
+                        <li><a href="bill.html">Bill estimate</a></li>
+                        <li><a href="register.html">Create an account</a></li>
+                    </ul>
+                </nav>
+                <nav class="footer-col" aria-labelledby="footer-popular">
+                    <h2 id="footer-popular">Popular restaurants</h2>
+                    <ul>
+                        <li><a href="restaurants.html#cikgu-mi">Nasi Berlauk Cikgu Mi</a></li>
+                        <li><a href="restaurants.html#desi-swaad">Desi Swaad Kitchen</a></li>
+                        <li><a href="restaurants.html#zen-house">Zen House Japanese Vegetarian Restaurant</a></li>
+                    </ul>
+                </nav>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 TapirFind.</p>
+                <a href="#">Back to top</a>
+            </div>
+        </footer>
+    </body>
+</html>
