@@ -1,7 +1,7 @@
 COS10005 Web Development - Assignment 2 (August 2026)
 TapirFind: restaurant discovery and reservation website
 
-GitHub repository : <<< FILL IN: https://github.com/YOUR-USERNAME/YOUR-REPOSITORY >>>  
+GitHub repository : https://github.com/EthanLYM/WebDevelopmentAssignment2
 
 How to run: open index.html in a browser. No server or install is needed. The reservation form
 posts to the Swinburne Mercury test address (http://mercury.swin.edu.au/it000000/cos10005/regtest.php).
