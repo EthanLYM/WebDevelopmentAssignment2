@@ -30,7 +30,7 @@ var restaurants = [
         purposes: ["Family"],
         categories: ["Muslim-Friendly", "Halal"],
         img: "images/cikguMi/cikguMiRestaurant.jpg",
-        alt: "Image of Nasi Berlauk Cikgu Mi Restaurant",
+        alt: "Nasi Berlauk Cikgu Mi Restaurant",
         logo: "images/cikguMi/cikguMiLogo.jpg",
         desc:
             "Nasi Berlauk Cikgu Mi is a beloved local restaurant specializing in authentic, " +
@@ -38,10 +38,10 @@ var restaurants = [
             "Each meal is guaranteed to be delicious and comforting, freshly prepared with passion using time-honored recipes. " +
             "It is the perfect dining destination for the whole family to enjoy together.",
         images: [
-            { src: "images/cikguMi/cikguMiRestaurant.jpg", alt: "Image of Nasi Berlauk Cikgu Mi Restaurant" },
-            { src: "images/cikguMi/nasiIkanTongkol.jpg", alt: "Image of the Nasi Ikan Tongkol Dish" },
-            { src: "images/cikguMi/nasiKeliGoreng.jpg", alt: "Image of the Nasi Keli Goreng Dish" },
-            { src: "images/cikguMi/nasiAyamGoreng.jpg", alt: "Image of the Nasi Ayam Goreng Dish" },
+            { src: "images/cikguMi/cikguMiRestaurant.jpg", alt: "Nasi Berlauk Cikgu Mi Restaurant" },
+            { src: "images/cikguMi/nasiIkanTongkol.jpg", alt: "Nasi Ikan Tongkol Dish" },
+            { src: "images/cikguMi/nasiKeliGoreng.jpg", alt: "Nasi Keli Goreng Dish" },
+            { src: "images/cikguMi/nasiAyamGoreng.jpg", alt: "Nasi Ayam Goreng Dish" },
         ],
         dishes: [
             { n: "Nasi Ikan Tongkol", p: 13.9 },
@@ -63,7 +63,7 @@ var restaurants = [
         purposes: ["Family", "Tourists"],
         categories: ["Muslim-Friendly"],
         img: "images/desiSwaad/desiSwaadRestaurant.jpg",
-        alt: "Image of Desi Swaad Kitchen Restaurant",
+        alt: "Desi Swaad Kitchen Restaurant",
         logo: "images/desiSwaad/desiSwaadLogo.jpg",
         desc:
             "Desi Swaad Kitchen is a restaurant that specializes in authentic Northern Indian cuisine " +
@@ -71,10 +71,10 @@ var restaurants = [
             "Each meal is freshly prepared with aromatic ingredients and guaranteed to be as delicious as it is reasonably priced. " +
             "It is the perfect dining destination for the whole family to enjoy together.",
         images: [
-            { src: "images/desiSwaad/desiSwaadRestaurant.jpg", alt: "Image of Desi Swaad Kitchen Restaurant" },
-            { src: "images/desiSwaad/paneerPakora.jpg", alt: "Image of the Paneer Pakora Dish" },
-            { src: "images/desiSwaad/muttonDumBiryani.jpg", alt: "Image of the Mutton Dum Biryani Dish" },
-            { src: "images/desiSwaad/chickenTandooriBiryani.jpg", alt: "Image of the Chicken Tandoori Biryani Dish" },
+            { src: "images/desiSwaad/desiSwaadRestaurant.jpg", alt: "Desi Swaad Kitchen Restaurant" },
+            { src: "images/desiSwaad/paneerPakora.jpg", alt: "Paneer Pakora Dish" },
+            { src: "images/desiSwaad/muttonDumBiryani.jpg", alt: "Mutton Dum Biryani Dish" },
+            { src: "images/desiSwaad/chickenTandooriBiryani.jpg", alt: "Chicken Tandoori Biryani Dish" },
         ],
         dishes: [
             { n: "Paneer Pakora", p: 16.9 },
@@ -99,7 +99,7 @@ var restaurants = [
         purposes: ["Family", "Couples", "Professionals"],
         categories: ["Muslim-Friendly"],
         img: "images/zenHouse/zenHouseSVelocity.jpg",
-        alt: "Image of Zen House's Sunway Velocity Restaurant",
+        alt: "Zen House's Sunway Velocity Restaurant",
         logo: "images/zenHouse/zenHouseLogo.png",
         desc:
             "Zen House serves the food of modern-day Japanese vegetarian cuisine. By experimenting " +
@@ -107,14 +107,14 @@ var restaurants = [
             "flavourful, creative and satisfying as regular food. Boasting a menu that is as varied as it is imaginative, " +
             "this place is ideal for hardcore vegetarians and Japanese cuisine enthusiasts alike. ",
         images: [
-            { src: "images/zenHouse/zenHouseSVelocity.jpg", alt: "Image of Zen House's Sunway Velocity Restaurant" },
-            { src: "images/zenHouse/zenHouseSPyramid.jpg", alt: "Image of Zen House's Sunway Pyramid Restaurant" },
+            { src: "images/zenHouse/zenHouseSVelocity.jpg", alt: "Zen House's Sunway Velocity Restaurant" },
+            { src: "images/zenHouse/zenHouseSPyramid.jpg", alt: "Zen House's Sunway Pyramid Restaurant" },
             {
                 src: "images/zenHouse/zenHouseSashimiMoriawase.jpg",
-                alt: "Image of the Zen House Sashimi Moriawase Dish",
+                alt: "Zen House Sashimi Moriawase Dish",
             },
-            { src: "images/zenHouse/omakaseMoriawase.jpg", alt: "Image of the Omakase Moriawase Dish" },
-            { src: "images/zenHouse/unagiKabayaki.jpg", alt: "Image of the Unagi Kabayaki Dish" },
+            { src: "images/zenHouse/omakaseMoriawase.jpg", alt: "Omakase Moriawase Dish" },
+            { src: "images/zenHouse/unagiKabayaki.jpg", alt: "Unagi Kabayaki Dish" },
         ],
         dishes: [
             { n: "Zen House Sashimi Moriawase", p: 58.9 },
@@ -136,7 +136,7 @@ var restaurants = [
         purposes: ["Family", "Couples", "Professionals"],
         categories: ["Muslim-Friendly"],
         img: "images/bearHug/bearHugRestaurant.jpg",
-        alt: "Image of The Bear Hug Restaurant & Cafe's Restaurant",
+        alt: "Bear Hug Restaurant & Cafe's Restaurant",
         logo: "images/bearHug/bearHugLogo.jpg",
         desc:
             "The Bear Hug Restaurant & Cafe offers an inviting selection of Western comfort dishes set within a warm and cozy " +
@@ -145,11 +145,11 @@ var restaurants = [
         images: [
             {
                 src: "images/bearHug/bearHugRestaurant.jpg",
-                alt: "Image of The Bear Hug Restaurant & Cafe's Restaurant",
+                alt: "Bear Hug Restaurant & Cafe's Restaurant",
             },
-            { src: "images/bearHug/aglioFriedChicken.jpg", alt: "Image of the Aglio Olio Fried Chicken Chop Dish" },
-            { src: "images/bearHug/grilledSalmon.jpg", alt: "Image of the Grilled Salmon Fish Dish" },
-            { src: "images/bearHug/eggSalmonPoke.jpg", alt: "Image of the Salad Poke Bowl with Egg & Salmon Dish" },
+            { src: "images/bearHug/aglioFriedChicken.jpg", alt: "Aglio Olio Fried Chicken Chop Dish" },
+            { src: "images/bearHug/grilledSalmon.jpg", alt: "Grilled Salmon Fish Dish" },
+            { src: "images/bearHug/eggSalmonPoke.jpg", alt: "Salad Poke Bowl with Egg & Salmon Dish" },
         ],
         dishes: [
             { n: "Aglio Olio Fried Chicken Chop", p: 35.0 },
@@ -171,17 +171,17 @@ var restaurants = [
         purposes: ["Family", "Tourists"],
         categories: [],
         img: "images/karHiong/karHiongRestaurant.jpg",
-        alt: "Image of Restoran Kar Hiong's Restaurant",
+        alt: "Restoran Kar Hiong's Restaurant",
         logo: "images/karHiong/karHiongLogo.jpg",
         desc:
             "Restoran Kar Hiong (家香饭店) is a restaurant that has quickly become a favorite among the " +
             "local populace for its home-styled and flavorful selection of Chinese cuisine mixed with influences from other culinary cultures (such as Indonesia). "+
             "With an extensive menu that features a variety of dishes, this restaurant is perfect for family meals and casual dining. ",
         images: [
-            { src: "images/karHiong/karHiongRestaurant.jpg", alt: "Image of Restoran Kar Hiong's Restaurant" },
-            { src: "images/karHiong/saltedEggMantisPrawn.jpg", alt: "Image of the Salted Egg Mantis Prawn Dish" },
-            { src: "images/karHiong/asamMixedSeafood.jpg", alt: "Image of the Asam Mixed Seafood Dish" },
-            { src: "images/karHiong/mangoChicken.jpg", alt: "Image of the Mango Chicken Dish" },
+            { src: "images/karHiong/karHiongRestaurant.jpg", alt: "Restoran Kar Hiong's Restaurant" },
+            { src: "images/karHiong/saltedEggMantisPrawn.jpg", alt: "Salted Egg Mantis Prawn Dish" },
+            { src: "images/karHiong/asamMixedSeafood.jpg", alt: "Asam Mixed Seafood Dish" },
+            { src: "images/karHiong/mangoChicken.jpg", alt: "Mango Chicken Dish" },
         ],
         dishes: [
             { n: "Salted Egg Mantis Prawn", p: 28.0 },
@@ -203,7 +203,7 @@ var restaurants = [
         purposes: ["Family", "Couples"],
         categories: [],
         img: "images/siamThaiger/siamThaigerRestaurant.jpg",
-        alt: "Image of Siam Thaiger Thai Cafe Restaurant",
+        alt: "Siam Thaiger Thai Cafe Restaurant",
         logo: "images/siamThaiger/siamThaigerLogo.jpg",
         desc:
             "Siam Thaiger Thai Cafe is a local Thai restaurant that has quickly become a favorite among the locals "+
@@ -211,10 +211,10 @@ var restaurants = [
             "This restaurant is perfect for family meals and casual dining; " +
             "connoisseurs of Thai food will find something to love in its diverse menu. ",
         images: [
-            { src: "images/siamThaiger/siamThaigerRestaurant.jpg", alt: "Image of Siam Thaiger Thai Cafe Restaurant" },
-            { src: "images/siamThaiger/siamThaiger3PorkCombo.jpg", alt: "Image of the 3 Pork Combo Dish" },
-            { src: "images/siamThaiger/siamThaigerFlowerCrabSalad.jpg", alt: "Image of the Flower Crab Salad Dish" },
-            { src: "images/siamThaiger/siamThaigerSpicySalmonSalad.jpg", alt: "Image of the Spicy Salmon Salad Dish" },
+            { src: "images/siamThaiger/siamThaigerRestaurant.jpg", alt: "Siam Thaiger Thai Cafe Restaurant" },
+            { src: "images/siamThaiger/siamThaiger3PorkCombo.jpg", alt: "3 Pork Combo Dish" },
+            { src: "images/siamThaiger/siamThaigerFlowerCrabSalad.jpg", alt: "Flower Crab Salad Dish" },
+            { src: "images/siamThaiger/siamThaigerSpicySalmonSalad.jpg", alt: "Spicy Salmon Salad Dish" },
         ],
         dishes: [
             { n: "3 Pork Combo", p: 58.5 },
